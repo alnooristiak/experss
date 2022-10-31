@@ -3,13 +3,21 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 
+// const getf = './components/index'
+// const cmp = `path.join(__dirname, ${getf}`;
+
 // hbs engine code 
 app.set('view engine', 'hbs');
+// app.set('views', cmp);
+
 
 app.get("/", (req, res) => {
     res.render("index");
 });
 
+app.get("*", (req, res) => {
+    res.send("404 error");
+});
 
 // builtin middleware 
 // app.use(express.static());
