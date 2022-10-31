@@ -3,6 +3,14 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 
+// hbs engine code 
+app.set('view engine', 'hbs');
+
+app.get("/", (req, res) => {
+    res.render("index");
+});
+
+
 // builtin middleware 
 // app.use(express.static());
 
